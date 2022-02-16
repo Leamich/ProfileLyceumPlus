@@ -1,0 +1,127 @@
+/* "About" block */
+
+#photo {
+	border-radius: 100%;
+	width: 20%;
+	float: left;
+	margin-right: 3%;
+}
+
+
+@media (max-width: 1000px) {
+	#photo {
+		float: none;
+		margin: 5% 15%;
+		width: 70%;
+	}
+}
+
+
+/* "School" block */
+
+.alert {
+	display: block;
+	padding: 1rem;
+
+	background: var(--alert-background);
+
+	border: solid 2px var(--alert-border);
+	border-radius: 5px;
+}
+
+
+#school-section > img {
+	float: right;
+	width: 30%;
+	margin-left: 3%;
+
+	border-radius: 10px;
+}
+
+
+#school-section > .alert {
+	margin-right: 31%;
+}
+
+
+@media (max-width: 1000px) {
+	#school-section > img {
+		float: none;
+		width: 70%;
+		margin: 5% 15%;
+	}
+
+	#school-section > .alert { margin-right: 0; }
+}
+
+
+/* "Questionnaire" block */
+
+#questionnaire table {
+	border-collapse: collapse;
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+}
+
+
+#questionnaire table td:last-child {
+	font-weight: bold;
+}
+
+
+#questionnaire table tr {
+	height: 2rem;
+	border-radius: 100px;
+}
+
+#questionnaire table tr:nth-child(2n) {
+	background: var(--menu-color);
+}
+
+
+/* копирование полей */
+
+#questionnaire table td:last-child:not(#github-cell):hover {
+	transform: translateY(-10%);
+}
+
+
+#questionnaire table td:last-child:not(#github-cell) {
+	cursor: pointer;
+	transition: transform .5s;
+	position: relative; /* для выравнивания ::after через position: absolute */
+}
+
+
+#questionnaire table td::after {
+	content: ''; /* здесь будет "скопировано" или "ошибка" */
+	font-size: .7rem;
+
+	margin-left: 5%;
+	
+	position: absolute;
+	bottom: 0; right: 0;
+}
+
+
+#questionnaire table td.copied-success::after {
+	content: 'скопировано';
+	animation: fade-in-out 2s linear;
+}
+
+#questionnaire table td.copied-fail::after {
+	content: 'ошибка';
+	animation: fade-in-out 2s linear;
+}
+
+
+@media (max-width: 1000px) {
+	#questionnaire table {
+		margin: 0;
+		width: 100%;
+
+		font-size: 2em;
+	}
+}

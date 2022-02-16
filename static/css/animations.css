@@ -1,0 +1,48 @@
+/* Animation */
+
+@keyframes fade-in-out {
+	from { opacity: 0; }
+
+	50% { opacity: 1; }
+
+	to { opacity: 0; }
+}
+
+
+@keyframes roll-in {
+	from {
+		transform: translateX(100%) rotate(180deg);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0) rotate(0deg);
+		opacity: 1;
+	}
+}
+
+
+@keyframes roll-out {
+	from {
+		transform: translateX(0) rotate(0deg);
+		opacity: 1;
+	}
+
+	to {
+		transform: translateX(-100%) rotate(-180deg);
+		opacity: 0;
+	}
+}
+
+
+@keyframes fade-in {
+	from {
+		transform: translateY(10%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

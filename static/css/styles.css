@@ -1,23 +1,10 @@
-/* Fonts */
-
-@font-face {
-	font-family: "Roboto Slab";
-	font-weight: normal;
-	src: url("../font/RobotoSlab-Regular.ttf");
-}
-
-@font-face {
-	font-family: "Roboto Slab";
-	font-weight: bold;
-	src: url("../font/RobotoSlab-Bold.ttf");
-}
-
 /* General */
 
 *, *::after, *::before {
 	margin: 0;
 	padding: 0;
 }
+
 
 :root {
 	--color-text: black;
@@ -33,23 +20,6 @@
 	font-family: 'Roboto Slab', serif;
 }
 
-@media (max-width: 1000px) {
-	h1 {
-		font-size: 4em;
-	}
-
-	h2 {
-		font-size: 3em;
-	}
-
-	h3 {
-		font-size: 2.34em;
-	}
-
-	p {
-		font-size: 2em;
-	}
-}
 
 /* Dark theme */
 body.dark-body {
@@ -64,15 +34,33 @@ body.dark-body {
 	--alert-border: var(--shadow-color-no-alpha);
 }
 
-.svg-sample {
-	display: none;
+
+h1 {
+	text-align: center;
+	margin-top: 5%;
 }
+
+
+@media (max-width: 1000px) {
+	h1 { font-size: 4em; }
+
+	h2 { font-size: 3em; }
+
+	h3 { font-size: 2.34em; }
+
+	p { font-size: 2em; }
+}
+
+
+/* svg я использую через use */
+.svg-sample { display: none; }
+
 
 body {
 	background: var(--background) no-repeat;
-	min-height: 100vh;
 	color: var(--color-text);
 }
+
 
 a {
 	text-decoration: none;
@@ -80,163 +68,25 @@ a {
 	color: var(--link-color);
 }
 
-/* Menu  */
 
-#menu > div {
-	display: none;
-
-	height: 5vh;
-	min-height: 60px;
-	width: 100vw;
-	padding-left: 3%;
-
-	background: var(--menu-color);
-}
-
-#menu > ul {
-	display: flex;
-	list-style: none;
-	height: 6vh;
-	background: var(--menu-color);
-	align-items: center;
-	gap: 5%;
-	padding: 0 1rem;
-	overflow: hidden;
-}
-
-#menu a {
-	font-weight: normal;
-}
-
-#menu > ul svg {
-	height: 30px;
-	width: 30px;
-
-	fill: var(--link-color);
-}
-
-#menu > ul > li:last-child {
-	margin-left: auto;
-}
-
-#menu > ul > li > a {
-	position: relative;
-}
-
-#menu > ul > li > a::after {
-	content: "";
-
-	position: absolute;
-	bottom: -2px;
-	left: 0;
-	width: 1%;
-	height: .1rem;
-	background-color: var(--link-color);
-
-	opacity: 0;
-	transition: width 500ms, opacity 250ms;
-}
-
-#menu > ul > li > a:hover::after {
-	opacity: 1;
-	width: 100%;
-}
-
-#menu > div svg {
-	fill: var(--link-color);
-	width: 50px;
-	height: 50px;
-	transition: transform .5s;
-}
-
-#menu > div.show-menu svg {
-	transform: rotate(90deg);
-}
-
-#menu > div label {
-	display: flex;
-	align-items: center;
-}
-
-#menu > div input {
-	display: none;
-}
-
-@media (max-width: 1000px) {
-	#menu > div {
-		display: flex;
-	}
-
-	#menu > ul {
-		position: absolute;
-		top: max(55px, 5vh);
-		left: 0;
-		width: 103vw;
-		height: 100vh;
-		z-index: 2;
-
-		padding: 0;
-
-		flex-direction: column;
-
-		font-size: 5rem;
-
-		transition: transform .5s;
-		transform: translateX(-103vw);
-	}
-
-	#menu > div.show-menu + ul {
-		transform: translateX(0);
-	}
-
-	#menu > ul > li:last-child {
-		margin-left: unset;
-	}
-
-	#menu > ul svg {
-		width: 100px;
-		height: 100px;
-	}
-}
-
-/* Animation */
-
-@keyframes roll-in {
-	from {
-		transform: translateX(100%) rotate(180deg);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateX(0) rotate(0deg);
-		opacity: 1;
-	}
-}
-
-@keyframes roll-out {
-	from {
-		transform: translateX(0) rotate(0deg);
-		opacity: 1;
-	}
-
-	to {
-		transform: translateX(-100%) rotate(-180deg);
-		opacity: 0;
-	}
-}
+/* Dark Theme Button */
 
 .hide-btn-theme {
 	animation: roll-out .5s;
 	opacity: 0;
 }
 
+
 .show-btn-theme {
 	animation: roll-in .5s;
 }
 
-#menu>ul>li:last-child {
+
+/* для выравнивания картинок (с position: absolute) */
+#menu > ul > li:last-child {
 	position: relative;
 }
+
 
 #moon-button {
 	position: absolute;
@@ -244,21 +94,14 @@ a {
 	left: 0;
 }
 
-/* Main */
 
-.alert {
-	display: block;
-	background: var(--alert-background);
-	border: solid 2px var(--alert-border);
-	border-radius: 5px;
-	padding: 1rem;
-}
+#darkThemeSwitch { display: none; }
 
 
-h1 {
-	text-align: center;
-	margin-top: 5%;
-}
+label[for="darkThemeSwitch"] { cursor: pointer; }
+
+
+/* Article card */
 
 article, .article {
 	display: block;
@@ -270,39 +113,32 @@ article, .article {
 	box-shadow: var(--shadow-color) 0px 5px 15px 15px;
 }
 
+
+/* обводка для тёмной темы */
 body.dark-body article, body.dark-body .article {
 	border-style: dashed solid;
 	border-color: var(--shadow-color-no-alpha);
 }
 
+
 article > p:not(:last-child), .article > p:not(:last-child) {
 	margin-bottom: 1%;
 }
+
 
 article h2, .article h2 {
 	text-align: center;
 	margin-bottom : 1%;
 }
 
+
 /* необходимо, чтобы контейнер учитывал высоту float-элементов */
 .float-hack {
 	overflow: hidden;
 }
 
-#photo {
-	border-radius: 100%;
-	width: 20%;
-	float: left;
-	margin-right: 3%;
-}
 
-@media (max-width: 1000px) {
-	#photo {
-		float: none;
-		margin: 5% 15%;
-		width: 70%;
-	}
-
+@media (max-width:  1000px) {
 	article, .article {
 		padding: 5%;
 		margin: 5%;
@@ -314,181 +150,5 @@ article h2, .article h2 {
 
 	body.dark-body article, body.dark-body .article {
 		border-width: 5px;
-	}
-}
-
-
-/* Dark theme  */
-
-#darkThemeSwitch {
-	display: none;
-}
-
-label[for="darkThemeSwitch"] {
-	cursor: pointer;
-}
-
-/* Popup */
-
-@keyframes fade-in {
-	from {
-		transform: translateY(10%);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
-
-.popup-window {
-	display: none;
-
-	transition: transform .5s, opacity .5s;
-}
-
-.popup-window:target {
-	position: fixed;
-	top: 0;
-	left: 0;
-
-	display: flex;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
-	background: var(--shadow-color);
-}
-
-.popup-window > div {
-	background: var(--background);
-	padding: 1rem;
-
-	display: flex;
-	flex-direction: column;
-
-	border-radius: 10px;
-
-	animation: fade-in .5s;
-}
-
-.popup-window button {
-	border: none;
-	background: none;
-	width: 1rem;
-	height: 1rem;
-	align-self: flex-end;
-	cursor: pointer;
-}
-
-.popup-window svg {
-	fill: var(--link-color);
-	width: 1rem;
-	height: 1rem;
-}
-
-.scroll-disable {
-	overflow: hidden;
-}
-
-/* School article */
-
-#school-section > img {
-	float: right;
-	width: 30%;
-	margin-left: 3%;
-
-	border-radius: 10px;
-}
-
-#school-section > .alert {
-	margin-right: 31%;
-}
-
-@media (max-width: 1000px) {
-	#school-section > img {
-		float: none;
-		width: 70%;
-		margin: 5% 15%;
-	}
-
-	#school-section > .alert {
-		margin-right: 0;
-	}
-}
-
-/* Questionnaire */
-
-#questionnaire table td:last-child {
-	font-weight: bold;
-}
-
-#questionnaire table td:last-child:not(#github-cell) {
-	cursor: pointer;
-	transition: transform .5s;
-	position: relative;
-}
-
-#questionnaire table td:last-child:not(#github-cell):hover {
-	transform: translateY(-10%);
-}
-
-@keyframes fade-in-out {
-	from {
-		opacity: 0;
-	}
-
-	50% {
-		opacity: 1;
-	}
-
-	to {
-		opacity: 0;
-	}
-}
-
-#questionnaire table td::after {
-	content: '';
-	font-size: .7rem;
-	margin-left: 5%;
-	position: absolute;
-	bottom: 0; right: 0;
-}
-
-
-#questionnaire table td.copied-success::after {
-	content: 'скопировано';
-	animation: fade-in-out 2s linear;
-}
-
-#questionnaire table td.copied-fail::after {
-	content: 'ошибка';
-	animation: fade-in-out 2s linear;
-}
-
-#questionnaire table {
-	border-collapse: collapse;
-
-	margin-left: auto;
-	margin-right: auto;
-	width: 75%;
-}
-
-#questionnaire table tr {
-	height: 2rem;
-	border-radius: 100px;
-}
-
-#questionnaire table tr:nth-child(2n) {
-	background: var(--menu-color);
-}
-
-@media (max-width: 1000px) {
-	#questionnaire table {
-		margin: 0;
-		width: 100%;
-
-		font-size: 2em;
 	}
 }

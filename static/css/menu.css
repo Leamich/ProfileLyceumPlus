@@ -1,0 +1,119 @@
+/* Menu */
+
+/* поле для кнопки меню на маленьких экранах */
+#menu > div {
+	display: none; /* здесь будет flex */
+
+	height: max(5vh, 60px); /* чтобы наверняка влезла кнопка */
+	width: 100vw;
+
+	background: var(--menu-color);
+}
+
+
+#menu > ul {
+	display: flex;
+	list-style: none;
+	height: 6vh;
+	background: var(--menu-color);
+	align-items: center;
+	gap: 5%;
+	padding: 0 1rem;
+	overflow: hidden;
+}
+
+#menu a {
+	font-weight: normal;
+}
+
+#menu > ul svg {
+	height: 30px;
+	width: 30px;
+
+	fill: var(--link-color);
+}
+
+#menu > ul > li:last-child {
+	margin-left: auto;
+}
+
+#menu > ul > li > a {
+	position: relative;
+}
+
+#menu > ul > li > a::after {
+	content: "";
+
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 1%;
+	height: .1rem;
+	background-color: var(--link-color);
+
+	opacity: 0;
+	transition: width 500ms, opacity 250ms;
+}
+
+#menu > ul > li > a:hover::after {
+	opacity: 1;
+	width: 100%;
+}
+
+#menu > div svg {
+	fill: var(--link-color);
+	width: 50px;
+	height: 50px;
+	transition: transform .5s;
+}
+
+#menu > div.show-menu svg {
+	transform: rotate(90deg);
+}
+
+#menu > div label {
+	display: flex;
+	align-items: center;
+	margin-left: 3%;
+}
+
+#menu > div input {
+	display: none;
+}
+
+@media (max-width: 1000px) {
+	#menu > div {
+		display: flex;
+	}
+
+	#menu > ul {
+		position: absolute;
+		top: max(55px, 5vh);
+		left: 0;
+		width: 103vw;
+		height: 100vh;
+		z-index: 2;
+
+		padding: 0;
+
+		flex-direction: column;
+
+		font-size: 5rem;
+
+		transition: transform .5s;
+		transform: translateX(-103vw);
+	}
+
+	#menu > div.show-menu + ul {
+		transform: translateX(0);
+	}
+
+	#menu > ul > li:last-child {
+		margin-left: unset;
+	}
+
+	#menu > ul svg {
+		width: 100px;
+		height: 100px;
+	}
+}
