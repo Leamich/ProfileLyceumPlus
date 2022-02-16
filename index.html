@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+<meta charset="utf-8">
+
+<link href="static/css/styles.css" rel="stylesheet">
+
+<script src="./static/js/script.js"></script>
+
+<title>Леонтьев Михаил</title>
+
+</head>
+
+<body>
+	<header>
+	<nav id="menu">
+		<div>
+			<input type="checkbox" id="menu-switch">
+			<label for="menu-switch">
+				<svg>
+					<use xlink:href="#ellipsis-svg" />
+				</svg>
+			</label>
+		</div>
+
+		<ul>
+			<li><a href="#menu">Home</a></li>
+			<li><a href="#name-section">Имя</a></li>
+			<li><a href="#school-section">Школа</a></li>
+			<li><a href="#hobby-section">Увлечения</a></li>
+			<li><a href="#questionnaire">Анкета</a></li>
+			<li>
+				<input id="darkThemeSwitch" type="checkbox">
+				<label for="darkThemeSwitch">
+
+				<svg id="sun-button" class="show-btn-theme">
+					<use xlink:href="#sun-svg" />
+				</svg>
+
+				<svg id="moon-button" class="hide-btn-theme">
+					<use xlink:href="#moon-svg" />
+				</svg>
+				</label>
+			</li>
+		</ul>
+	</nav>
+	</header>
+
+	<main>
+		<h1>Творческое задание</h1>
+		<section>
+		<article id="name-section" class="float-hack">
+			<h2>О себе</h2>
+
+			<img src="./static/img/photo.jpg" id="photo" alt="Леонтьев Михаил">
+			<p>Итак, я <strong>Леонтьев Михаил Олегович</strong>, родился в <strong>2005</strong> году в прекрасном городе <em>Тольятти</em>, где, собственно, и проживаю. </p>
+
+			<p>
+				Год назад закончил Яндекс.Лицей. Прикреплю сертификаты 
+				<a title="Проверка сертификата" href="https://lyceum.yandex.ru/certificate/check/?certNumber=200135230&lastName=%D0%9B%D0%B5%D0%BE%D0%BD%D1%82%D1%8C%D0%B5%D0%B2" target="_blank">первого</a> 
+				и 
+				<a title="Проверка сертификата" href="https://lyceum.yandex.ru/certificate/check/?certNumber=210235230&lastName=%D0%9B%D0%B5%D0%BE%D0%BD%D1%82%D1%8C%D0%B5%D0%B2" target="_blank"> второго</a> 
+				года.
+			</p>
+
+			<p>
+				Пожалуй, у меня есть одно <a href="#the-mystery">тайное знание</a>, которое точно станет аргументом для принятия меня в Лицей++.
+			</p>
+		</article>
+
+		<article id="school-section" class="float-hack">
+			<h2>Школа</h2>
+
+			<img src="./static/img/school.jpg" alt="Гимназия 39">
+
+			<p class="alert">
+				<b>ВНИМАНИЕ!</b> Следующий текст является филлером и не несёт важной информации. Предлагаю перейти к другим, более интересным разделам
+			</p>
+
+			<p>
+				Я учусь в (сейчас внимание!) <em>муниципальном бюджетном общеобразовательном учреждении городского округа Тольятти «<strong>Гимназия № 39</strong> имени Героя Советского Союза Василия 
+				Филипповича Маргелова»</em> в физико-математическом классе. Успеваемость оставляет желать лучшего, зато по информатике стабильно 5))
+			</p>
+		</article>
+
+		<article id="hobby-section">
+			<h2>Увлечения</h2>
+
+			<h3>Программирование</h3>
+			<p>
+				Вполне очевидно, да? Понимаю, что мне будет сложно перебить других конкурсантов, но всё же приведу некоторые достижения в этой областях.
+			</p>
+
+			<p>
+				Когда-то давно (в годах 2018-2019) программировал роботов для соревнований по робототехнике. Это было интересно, но сейчас это уже не вызывает энтузиазма.
+			</p>
+
+			<p>
+				С 7 класса занимаюсь олимпиадным программированием. Ничего ососбенного не добился, только места на муниципальных уровнях — ничего интересного
+			</p>
+
+			<h3>Книги</h3>
+			<p>
+				Вопрос про увлечения, так что тут можно и про книги. Я люблю читать, сам иногда пишу. Учу английский. 
+			</p>
+		</article>
+		</section>
+
+		<section id="questionnaire" class="article">
+			<h2>Анкета</h2>
+			
+			<table>
+				<tr>
+					<td>Имя</td>
+					<td>Леонтьев Михаил Олегович</td>
+				</tr>
+
+				<tr>
+					<td>Школа</td>
+					<td>МБУ "Гимназия №39"</td>
+  				</tr>
+
+				<tr>
+					<td>Город</td>
+					<td>Тольятти</td>
+  				</tr>
+
+				<tr>
+					<td>Возраст</td>
+					<td>16</td>
+  				</tr>
+
+				<tr>
+					<td>Github</td>
+					<td id="github-cell"><a href="https://github.com/leamich">Leamich</a></td>
+  				</tr>
+
+				<tr>
+					<td>Telegram</td>
+					<td>@rubikon1342</td>
+  				</tr>
+			</table>
+		</section>
+
+		<aside id="the-mystery" class="popup-window">
+		<div>
+			<button><svg><use xlink:href="#xmark-svg" /></svg></button>
+			Да, я умею делать всплывающие окна! :-)
+		</div>
+		</aside>
+	</main>
+
+
+	<!-- SVG SAMPLES (hidden, здесь нет ничего интересного) -->
+
+	<!-- All icons distributed FontAwesome License: https://fontawesome.com/license/free -->
+
+	<!-- #sun-svg -->
+	<svg class="svg-sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+		<!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+		<symbol id="sun-svg" viewBox="0 0 512 512">
+			<path d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/>
+		</symbol>
+	</svg>
+
+	<!-- #moon-svg -->
+	<svg class="svg-sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+		<!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+		<symbol id="moon-svg" viewBox="0 0 512 512">
+			<path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/>
+		</symbol>
+	</svg>
+
+	<!-- #clipboard-svg -->
+	<svg class="svg-sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+		<!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+		<symbol id="clipboard-svg" viewBox="0 0 384 512">
+			<path d="M320 64h-49.61C262.1 27.48 230.7 0 192 0S121 27.48 113.6 64H64C28.65 64 0 92.66 0 128v320c0 35.34 28.65 64 64 64h256c35.35 0 64-28.66 64-64V128C384 92.66 355.3 64 320 64zM192 48c13.23 0 24 10.77 24 24S205.2 96 192 96S168 85.23 168 72S178.8 48 192 48zM336 448c0 8.82-7.178 16-16 16H64c-8.822 0-16-7.18-16-16V128c0-8.82 7.178-16 16-16h18.26C80.93 117.1 80 122.4 80 128v16C80 152.8 87.16 160 96 160h192c8.836 0 16-7.164 16-16V128c0-5.559-.9316-10.86-2.264-16H320c8.822 0 16 7.18 16 16V448z"/>
+		</symbol>
+	</svg>
+
+	<!-- #xmark-svg -->
+	<svg class="svg-sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+		<!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+		<symbol id="xmark-svg" viewBox="0 0 320 512">
+			<path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/>
+		</symbol>
+	</svg>
+
+	<!-- #ellipsis-svg -->
+	<svg class="svg-sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+		<!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+		<symbol id="ellipsis-svg" viewBox="0 0 448 512">
+			<path d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"/>
+		</symbol>
+	</svg>
+</body>
+</html>
