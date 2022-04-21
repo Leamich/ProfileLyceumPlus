@@ -1,7 +1,10 @@
+let darkThemeSwitch, svgSun, svgMoon;
+
+
 function initialDarkTheme() {
-	const darkThemeSwitch = document.getElementById("darkThemeSwitch");
-	const svgSun = document.getElementById("sun-button");
-	const svgMoon = document.getElementById("moon-button");
+	darkThemeSwitch = document.getElementById("darkThemeSwitch");
+	svgSun = document.getElementById("sun-button");
+	svgMoon = document.getElementById("moon-button");
 
 	darkThemeSwitch.addEventListener('change', (event) => {
 		let darkTheme = darkThemeSwitch.checked;
